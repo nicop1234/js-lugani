@@ -12,10 +12,11 @@ console.log(acum)
 
 //bucle while
 console.log("bucle while")
-while (cont < 11) {
+while (cont <= 11) {
     acum2 = acum2 * (cont+1)
     console.log(acum2)
-    cont=+1
+    cont= cont + 1
+    if (cont == 11) break
   }
 
 
