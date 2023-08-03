@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <script>
+      // Función para ingresar nombres y contar cuántos se ingresaron
+      function act1() {
+        const nombres = [];
+        let nombre;
+
+        // Solicitar al usuario que ingrese los nombres hasta que se ingrese "Fin"
+        while (true) {
+          nombre = prompt("Ingrese un nombre (o escriba 'Fin' para terminar):");
+
+          // Convertir el nombre a minúsculas para comparar sin importar mayúsculas o minúsculas
+          nombre = nombre.toLowerCase();
+
+          if (nombre === "fin") {
+            break; // Salir del bucle si se ingresa "Fin"
+          }
+
+          nombres.push(nombre);
+        }
+
+        // Mostrar la cantidad de nombres ingresados
+        const cantidadNombres = nombres.length;
+        alert(`Se ingresaron ${cantidadNombres} nombres.`);
+      }
+
+      // Llamar a la función act1 para iniciar el programa
+      act1();
+
+      // Función para ingresar nombres y contar cuántos se ingresaron
+      function act2() {
+        const nombres = [];
+        let nombre;
+
+        // Solicitar al usuario que ingrese los nombres hasta que se ingrese "Fin", "fin" o "FIN"
+        while (true) {
+          nombre = prompt("Ingrese un nombre (o escriba 'Fin' para terminar):");
+
+          // Convertir el nombre a minúsculas para comparar sin importar mayúsculas o minúsculas
+          nombre = nombre.toLowerCase();
+
+          if (nombre === "fin") {
+            break; // Salir del bucle si se ingresa "Fin", "fin" o "FIN"
+          }
+
+          nombres.push(nombre);
+        }
+
+        // Mostrar la cantidad de nombres ingresados
+        const cantidadNombres = nombres.length;
+        alert(`Se ingresaron ${cantidadNombres} nombres.`);
+      }
+
+      // Llamar a la función act2 para iniciar el programa
+      act2();
+
+      // Función para buscar una clave en el texto fuente
+      function act3() {
+        const fuente = prompt("Ingrese el texto fuente:");
+        const clave = prompt("Ingrese la clave a buscar:");
+
+        // Convertir ambos strings a minúsculas para buscar sin importar mayúsculas o minúsculas
+        const fuenteMin = fuente.toLowerCase();
+        const claveMin = clave.toLowerCase();
+
+        const posicion = fuenteMin.indexOf(claveMin);
+
+        if (posicion !== -1) {
+          alert(`La clave se encontró en la posición: ${posicion}`);
+        } else {
+          alert("La clave no fue encontrada.");
+        }
+      }
+
+      // Llamar a la función act3 para iniciar la búsqueda
+      act3();
+      // Función para determinar si es palíndromo
+      function act4() {
+        const texto = prompt("Ingrese una palabra o texto:");
+        const textoSinEspacios = texto.replace(/\s/g, ""); // Eliminar espacios en blanco
+        const textoReverso = textoSinEspacios.split("").reverse().join("");
+
+        if (textoSinEspacios.toLowerCase() === textoReverso.toLowerCase()) {
+          alert("Es un palíndromo.");
+        } else {
+          alert("No es un palíndromo.");
+        }
+      }
+
+      // Llamar a la función act4 para verificar si es palíndromo
+      act4();
+
+      // Función para verificar si el correo electrónico tiene el carácter "@"
+      function act5() {
+        const direccionEmail = prompt(
+          "Ingrese una dirección de correo electrónico:"
+        );
+        return direccionEmail.includes("@");
+      }
+
+      // Verificar si la dirección de correo electrónico tiene el carácter "@"
+      if (act5()) {
+        alert("La dirección de correo electrónico es válida.");
+      } else {
+        alert("La dirección de correo electrónico no es válida.");
+      }
+
+      // Función para todas las funcionalidades requeridas de act6
+      function act6(cadena) {
+        // Función para imprimir la primera mitad de los caracteres de la cadena
+        function primeraMitad(cadena) {
+          const mitad = Math.ceil(cadena.length / 2);
+          return cadena.substring(0, mitad);
+        }
+
+        // Función para imprimir el último carácter
+        function ultimoCaracter(cadena) {
+          return cadena.charAt(cadena.length - 1);
+        }
+
+        // Función para imprimir la cadena en forma inversa
+        function inversa(cadena) {
+          return cadena.split("").reverse().join("");
+        }
+
+        // Función para imprimir cada carácter del String separado con un guión
+        function conGuiones(cadena) {
+          return cadena.split("").join("-");
+        }
+
+        // Función para imprimir la cantidad de vocales almacenadas
+        function contarVocales(cadena) {
+          const vocales = "aeiouAEIOU";
+          let count = 0;
+          for (let i = 0; i < cadena.length; i++) {
+            if (vocales.includes(cadena[i])) {
+              count++;
+            }
+          }
+          return count;
+        }
+
+        // Mostrar los resultados
+        alert(`Primera mitad: ${primeraMitad(cadena)}`);
+        alert(`Último carácter: ${ultimoCaracter(cadena)}`);
+        alert(`Inversa: ${inversa(cadena)}`);
+        alert(`Separado con guiones: ${conGuiones(cadena)}`);
+        alert(`Cantidad de vocales: ${contarVocales(cadena)}`);
+      }
+
+      // Solicitar al usuario que ingrese un String
+      const texto = prompt("Ingrese un texto:");
+
+      // Llamar a la función act6 con el texto ingresado
+      act6(texto);
+      function act7() {
+        const oracion = prompt("Ingrese una oración:");
+        const palabras = oracion.split(" ");
+
+        for (let i = 0; i < palabras.length; i++) {
+          document.write(palabras[i]);
+          document.write("<br>")
+        }
+      }
+
+      // Llamar a la función act7 para cargar la oración y mostrar cada palabra
+      act7();
+    </script>
+  </body>
+</html>

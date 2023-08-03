@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <script>
+      // Función que calcula el número elevado a la tercera potencia
+      function calcularPotencia(numero) {
+        return numero ** 3;
+      }
+
+      // Función principal para solicitar el número al usuario y mostrar el resultado
+      function main() {
+        // Solicitar al usuario que ingrese un número
+        let numero = prompt("Ingrese un número:");
+
+        // Convertir el valor ingresado a un número flotante
+        numero = parseFloat(numero);
+
+        // Verificar si el valor ingresado es un número válido
+        if (isNaN(numero)) {
+          alert("¡Error! Debes ingresar un número válido.");
+          return; // Salir de la función si no es un número válido
+        }
+
+        // Calcular la tercera potencia del número
+        let resultado = calcularPotencia(numero);
+
+        // Mostrar el resultado
+        alert(`El número elevado a la tercera potencia es: ${resultado}`);
+      }
+
+      // Llamar a la función principal para iniciar el programa
+      main();
+
+      // Función principal para solicitar el valor al usuario y mostrar la raíz cuadrada
+      function act2() {
+        // Solicitar al usuario que ingrese un valor
+        let valor = prompt("Ingrese un valor:");
+
+        // Convertir el valor ingresado a un número flotante
+        valor = parseFloat(valor);
+
+        // Verificar si el valor ingresado es un número válido
+        if (isNaN(valor)) {
+          alert("¡Error! Debes ingresar un valor numérico válido.");
+          return; // Salir de la función si no es un número válido
+        }
+
+        // Calcular la raíz cuadrada del valor
+        let raizCuadrada = Math.sqrt(valor);
+
+        // Mostrar el resultado
+        alert(`La raíz cuadrada de ${valor} es: ${raizCuadrada}`);
+      }
+
+      // Llamar a la función principal para iniciar el programa
+      act2();
+      
+    </script>
+  </body>
+</html>

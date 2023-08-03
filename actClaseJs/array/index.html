@@ -1,0 +1,111 @@
+!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <script>
+      // Función principal para solicitar el vector y realizar los cálculos
+      function main() {
+        const vector = [];
+        for (let i = 0; i < 8; i++) {
+          let valor = prompt(`Ingrese el elemento ${i + 1}:`);
+          valor = parseFloat(valor);
+          if (isNaN(valor)) {
+            alert("¡Error! Debes ingresar un valor numérico válido.");
+            return; // Salir de la función si no es un número válido
+          }
+          vector.push(valor);
+        }
+
+        // Calcular el valor acumulado de todos los elementos
+        let acumuladoTotal = 0;
+        for (let i = 0; i < vector.length; i++) {
+          acumuladoTotal += vector[i];
+        }
+
+        // Calcular el valor acumulado de los elementos mayores a 36
+        let acumuladoMayor36 = 0;
+        for (let i = 0; i < vector.length; i++) {
+          if (vector[i] > 36) {
+            acumuladoMayor36 += vector[i];
+          }
+        }
+
+        // Calcular la cantidad de valores mayores a 50
+        let cantidadMayores50 = 0;
+        for (let i = 0; i < vector.length; i++) {
+          if (vector[i] > 50) {
+            cantidadMayores50++;
+          }
+        }
+
+        // Mostrar los resultados
+        alert(`Valor acumulado de todos los elementos: ${acumuladoTotal}`);
+        alert(
+          `Valor acumulado de los elementos mayores a 36: ${acumuladoMayor36}`
+        );
+        alert(`Cantidad de valores mayores a 50: ${cantidadMayores50}`);
+      }
+
+      // Llamar a la función principal para iniciar el programa
+      main();
+
+      // Función principal para solicitar la carga de los vectores y realizar la suma
+      function act2() {
+        // Solicitar al usuario que ingrese el tamaño del vector
+        let tamañoVector = parseInt(prompt("Ingrese el tamaño del vector:"));
+
+        // Verificar si el tamaño ingresado es un número válido
+        if (isNaN(tamañoVector) || tamañoVector <= 0) {
+          alert("¡Error! Debes ingresar un tamaño de vector válido.");
+          return; // Salir de la función si no es un número válido o es negativo
+        }
+
+        // Declarar los vectores y el vector resultado
+        const vector1 = [];
+        const vector2 = [];
+        const vectorResultado = [];
+
+        // Solicitar al usuario que ingrese los elementos del primer vector
+        alert("Ingrese los elementos del primer vector:");
+        for (let i = 0; i < tamañoVector; i++) {
+          let valor = prompt(`Ingrese el elemento ${i + 1}:`);
+          valor = parseFloat(valor);
+          if (isNaN(valor)) {
+            alert("¡Error! Debes ingresar un valor numérico válido.");
+            return; // Salir de la función si no es un número válido
+          }
+          vector1.push(valor);
+        }
+
+        // Solicitar al usuario que ingrese los elementos del segundo vector
+        alert("Ingrese los elementos del segundo vector:");
+        for (let i = 0; i < tamañoVector; i++) {
+          let valor = prompt(`Ingrese el elemento ${i + 1}:`);
+          valor = parseFloat(valor);
+          if (isNaN(valor)) {
+            alert("¡Error! Debes ingresar un valor numérico válido.");
+            return; // Salir de la función si no es un número válido
+          }
+          vector2.push(valor);
+        }
+
+        // Realizar la suma componente a componente y guardar el resultado en el vector resultado
+        for (let i = 0; i < tamañoVector; i++) {
+          vectorResultado.push(vector1[i] + vector2[i]);
+        }
+
+        // Mostrar el resultado
+        alert(
+          `Resultado de la suma componente a componente: ${vectorResultado}`
+        );
+      }
+
+      // Llamar a la función principal para iniciar el programa
+      act2();
+    </script>
+  </body>
+</html>

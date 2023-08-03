@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <script>
+      function mostrarFechaHora() {
+        let fecha, mes;
+        fecha = new Date();
+        mes = fecha.getMonth() + 1;
+        document.write("Hoy es ");
+        if (fecha.getDay() == 0 ) {
+          document.write("Domingo ");
+        }
+        if (fecha.getDay() == 1 ) {
+          document.write("Lunes ");
+        }
+        if (fecha.getDay() == 2 ) {
+          document.write("Martes ");
+        }
+        if (fecha.getDay() == 3 ) {
+          document.write("Miercoles ");
+        }
+        if (fecha.getDay() == 4 ) {
+          document.write("Jueves ");
+        }
+        if (fecha.getDay() == 5 ) {
+          document.write("Viernes ");
+        }
+        if (fecha.getDay() == 6 ) {
+          document.write("Sabado ");
+        }
+        document.write(fecha.getDay());
+        document.write(" de ");
+        if (mes == 1 ) {
+          document.write("Enero");
+        }
+        if (mes == 2 ) {
+          document.write("Febrero");
+        }
+        if (mes == 3 ) {
+          document.write("Marzo");
+        }
+        if (mes == 4 ) {
+          document.write("Abril");
+        }
+        if (mes == 5 ) {
+          document.write("Mayo");
+        }
+        if (mes == 6 ) {
+          document.write("Junio");
+        }
+        if (mes == 7 ) {
+          document.write("Julio");
+        }
+        if (mes == 8 ) {
+          document.write("Agosto");
+        }
+        if (mes == 9 ) {
+          document.write("Septiembre");
+        }
+        if (mes == 10 ) {
+          document.write("Octubre");
+        }
+        if (mes == 11 ) {
+          document.write("Noviembre");
+        }
+        if (mes == 12 ) {
+          document.write("Diciembre");
+        }
+        document.write(" de ");
+        document.write(fecha.getUTCFullYear());
+        document.write("<br>");
+        if (mes == 1 || mes == 2 || mes == 3 || mes == 4) {
+          document.write("Primer cuatrimestre");
+        }
+        if (mes == 5 || mes == 6 || mes == 7 || mes == 8) {
+          document.write("Segundo cuatrimestre");
+        }
+        if (mes == 9 || mes == 10 || mes == 11 || mes == 12) {
+          document.write("tercer cuatrimestre");
+        }
+      }
+
+      //Llamada a la función
+      mostrarFechaHora();
+
+      //------------------problema1-----------------------------
+      document.write(fecha.getMonth() + 1 + "/");
+    </script>
+  </body>
+</html>
